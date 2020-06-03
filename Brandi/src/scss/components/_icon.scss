@@ -1,0 +1,142 @@
+@font-face {
+    font-family: 'Brandi';
+    src: url('../fonts/icons/Brandi.eot?lbuije');
+    src: url('../fonts/icons/Brandi.eot?lbuije#iefix') format('embedded-opentype'), url('../fonts/icons/Brandi.ttf?lbuije') format('truetype'), url('../fonts/icons/Brandi.woff?lbuije') format('woff'), url('../fonts/icons/Brandi.svg?lbuije#Brandi') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'Brandi' !important;
+    // speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon {
+    & &-social {
+        font-size: 18px;
+        color: #ffffff;
+        opacity: 0.3;
+        &:hover {
+            opacity: 0.8;
+        }
+        &.icon-discuss {
+            font-size: 22px;
+            font-weight: 900;
+            color: #062033;
+            opacity: 0.2;
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+}
+
+.icon-features {
+    color: $primary-color;
+    font-size: 18px;
+}
+
+.icon-mail-envelope-closed:before {
+    content: "\e902";
+    font-size: 22px;
+}
+
+.icon-arrow-right:before {
+    content: "\e903";
+}
+
+.icon-card {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    margin-bottom: 30px;
+}
+
+.icon-eye:before {
+    content: "\e905";
+    color: #ffffff;
+}
+
+.icon-feather:before {
+    content: "\e906";
+}
+
+.icon-pencil:before {
+    content: "\e907";
+}
+
+.icon-megaphone:before {
+    content: "\e901";
+}
+
+.icon-heart-outlined:before {
+    content: "\e900";
+}
+
+.icon-forrst:before {
+    content: "\e908";
+}
+
+.icon-social:before {
+    content: "\e908";
+}
+
+.icon-google-plus:before {
+    content: "\ea8b";
+}
+
+.icon-facebook:before {
+    content: "\ea90";
+}
+
+.icon-twitter:before {
+    content: "\ea96";
+}
+
+.icon-dribbble:before {
+    content: "\eaa7";
+}
+
+.icon-behance:before {
+    content: "\e909";
+}
+
+.map-icon {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    & img {
+        height: 10px;
+    }
+}
+
+@media (min-width:540px) {
+    .map-icon {
+        & img {
+            height: 20px;
+        }
+    }
+}
+
+@media (min-width:540px) {
+    .map-icon {
+        & img {
+            height: 35px;
+        }
+    }
+}

@@ -1,0 +1,28 @@
+$button-padding: 10px 15px;
+$font-size: 17px;
+$font-sise-sm: $font-size - 2px;
+$button-primary-color: #ffffff;
+$button-primary-bg: #f44336;
+@mixin buttonVariant($color, $bg, $border: transparent) {
+    color: $color;
+    background-color: $bg;
+    border: $border;
+    font-weight: 500;
+    &:hover {
+        background-color: darken($bg, 15%);
+        color: $button-primary-color;
+    }
+}
+
+.button {
+    display: inline-block;
+    padding: $button-padding;
+    font-size: $font-size;
+    &-primary {
+        @include buttonVariant($button-primary-color, $button-primary-bg)
+    }
+    &-block {
+        display: block;
+        width: 100%;
+    }
+}

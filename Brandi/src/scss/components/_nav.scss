@@ -1,0 +1,13 @@
+.navbar-dark .navbar-nav .active>.nav-link:hover {
+    opacity: 0.5;
+}
+
+#pills-tab {
+    margin-bottom: 36px;
+    & .nav-link,
+    & .nav-link-active {
+        padding: 10px 20px;
+        line-height: 14px;
+        font-weight: !important;
+    }
+}

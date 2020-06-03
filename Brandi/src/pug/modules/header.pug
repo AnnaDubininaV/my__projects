@@ -1,0 +1,15 @@
+include ../mixins
+header#header.pt-4.pb-3
+	.container
+		.navbar.navbar-dark.navbar-expand-md.justify-content-sm-between.align-items-baseline.p-0
+			.logo-wrapper.d-flex.flex-column.flex-sm-row.align-items-baseline
+				+link("#", "Brandi")(class= "logo")
+				span.line.d-none.d-sm-inline.mx-sm-4.text-light |
+				span.moto.text-light I’am your tag line
+		
+			button(class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation")
+				span.navbar-toggler-icon
+
+			.collapse.navbar-collapse.flex-grow-0(id="navbarToggler")
+				include nav
+		

@@ -1,0 +1,82 @@
+mixin link(href, name)
+	a(href=href)&attributes(attributes)= name
+		if(block)
+			block
+
+
+
+mixin card(cardClass, iconName, cardImage, cardBody, title, description)
+	.card(class=cardClass)
+		if(iconName)
+			figure.card-image.icon.rounded-circle
+				span(class=iconName)
+		else
+			figure.card-image
+				img(src=cardImage, alt= "card-image")
+		if(cardBody)
+			.card-body
+				h4.card-title=title
+				p.card-text=description
+
+mixin cardJustImageHover1(cardClass, cardImage, icon, overlayTitle, overlayDesc)
+	.card(class=cardClass)
+		//- if(iconName)
+		//- 	figure.card-image.icon.rounded-circle
+		//- 		span(class=iconName)
+		figure.card-image
+			img(src=cardImage, alt= "card-image")
+			.card-overlay.position-absolute
+				.icon-card
+					span.overlayIcon(class=icon)
+				.card-overlay-text
+					p.card-overlay-title&attributes(attributes)= overlayTitle
+					p.card-overlay-descr&attributes(attributes)= overlayDesc
+	
+mixin cardJustImageHover(cardClass, cardImage, icon, overlayTitle, overlayDesc)
+	.card(class=cardClass)
+		//- if(iconName)
+		//- 	figure.card-image.icon.rounded-circle
+		//- 		span(class=iconName)
+		figure.card-image
+			img(src=cardImage, alt= "card-image")
+			.card-overlay.position-absolute
+				+link(cardImage)(class="icon-card" data-fancybox="gallery" data-width="1000")
+					span.overlayIcon(class=icon)
+				.card-overlay-text
+					p.card-overlay-title&attributes(attributes)= overlayTitle
+					p.card-overlay-descr&attributes(attributes)= overlayDesc
+		
+mixin list-item-sosial(className, item)
+	li(class="list-group-item border-0 "  + className)
+		+link(item.url)(class="icon-social " + item.classname)
+
+mixin list-item-icon(className, item)
+	li(class="list-group-item border-0 "  + className)
+		span(class= item.classname)
+
+mixin list-item-primary(className, item)
+	li(class="list-group-item border-0 "  + className)&attributes(attributes)= item
+		
+		
+mixin list(list, listClass, listDescr)
+	ul(class="list " + listClass)
+		if(listDescr=="social")
+			each item in list
+				+list-item-sosial("d-flex justify-content-center align-items-center icon", item)
+		else if(listDescr=="icon")
+			each item in list
+				+list-item-icon("rounded-circle d-flex justify-content-center align-items-center icon", item)
+		else
+			each item in list
+				+list-item-primary(item.classname, item.description)
+					
+
+//- mixin list-item(className, item)
+//- 	li(class="list-item" + className)
+//- 		+link(item.url)(class="icon-social " + item.classname)
+
+
+//- mixin list(list, listClass)
+//- ul(class="list " + listClass)
+//- 		each item in list
+//- 			+list-item("", item)

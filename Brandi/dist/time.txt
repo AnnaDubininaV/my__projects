@@ -1,0 +1,9 @@
+html - 3
+hesder - 1
+footer - 2
+slider - 4
+card - 2
+form - 1
+sections - 3
+
+16 hours

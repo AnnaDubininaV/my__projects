@@ -1,0 +1,245 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible", content="ie=edge")
+		title Brandi
+		//- link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+		link(rel="stylesheet", href="https://unpkg.com/swiper/css/swiper.min.css")
+		link(href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet")
+		link(href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet")
+
+		link(rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css")
+
+		link(rel="stylesheet", href="css/main.css")
+	body
+		include mixins.pug
+		include variables.pug
+		
+		.wrapper.overflow-hidden
+			main.main
+				section.section.section-hero.p-0
+					.section-background
+						img.bg-image(src="images/7-layers.jpg" alt="bg-img")
+						
+					.section-foreground
+						include modules/header.pug
+						.helper
+						.container.position-relative.h-100
+							.swiper-container.swiper-container1
+								.swiper-wrapper
+									.swiper-slide
+										.section-body.text-light
+											h1.section-title.text-light.text-capitalize.m-0
+												span.font-weight-light Meet 
+												span Brandi!
+											h2.section-subtitle.text-primary /creative one page template.
+											p.section-description We are a team of professionals									
+											+list(socialList, "list-group list-social list-group-horizontal justify-content-center mx-auto", "social")
+
+									.swiper-slide
+										.section-body.text-light
+											h1.section-title.text-light.text-capitalize.m-0
+												span.font-weight-light Meet 
+												span Andy!
+											h2.section-subtitle.text-primary /creative one page template.
+											p.section-description We are a team of professionals									
+											+list(socialList, "list-group list-social list-group-horizontal justify-content-center mx-auto", "social")
+
+									.swiper-slide
+										.section-body.text-light
+											h1.section-title.text-light.text-capitalize.m-0
+												span.font-weight-light Meet 
+												span Sandy!
+											h2.section-subtitle.text-primary /creative one page template.
+											p.section-description We are a team of professionals									
+											+list(socialList, "list-group list-social list-group-horizontal justify-content-center mx-auto", "social")
+
+						.swiper-pagination
+
+				section.section.section-features#features
+					.container
+						.section-body
+							h3.section-title Features
+							include modules/delimiter.pug
+							.swiper-container.swiper-container2
+								.swiper-wrapper
+									.swiper-slide
+										+card("card-features", "icon-features icon-feather", "", "true","Branding", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore")
+									.swiper-slide
+										+card("card-features", "icon-features icon-pencil", "", "true", "Development", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore")
+									.swiper-slide
+										+card("card-features", "icon-features icon-megaphone", "", "true", "Consulting", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore")
+									.swiper-slide
+										+card("card-features", "icon-pencil icon-features", "", "true", "Development", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore")
+								.swiper-pagination2
+						
+				section.section.section-works.position-relative.pb-4#works
+					.container
+						.section-body
+							h3.section-title Works
+							include modules/delimiter.pug
+							p.section-description.col-10.mx-auto.mb-5 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+					ul.nav.nav-pills.justify-content-center(id="pills-tab" role="tablist")
+						li.nav-item
+							+link("#pills-all", "All")(class= "nav-link active font-weight-bold", id="pills-all-tab" data-toggle="pill" role="tab" aria-controls="pills-all" aria-selected="true")
+						li.nav-item
+							+link("#pills-branding", "Branding")(class= "nav-link font-weight-bold", id="pills-branding-tab" data-toggle="pill" role="tab" aria-controls="pills-branding" aria-selected="false")
+						li.nav-item
+							+link("#pills-web", "Web")(class= "nav-link font-weight-bold", id="pills-web-tab" data-toggle="pill" role="tab" aria-controls="pills-web" aria-selected="false")
+						li.nav-item
+							+link("#pills-logo-design", "Logo Design")(class= "nav-link font-weight-bold", id="pills-logo-design-tab" data-toggle="pill" role="tab" aria-controls="pills-logo-design" aria-selected="false")
+						li.nav-item
+							+link("#pills-photography", "Photography")(class= "nav-link font-weight-bold", id="pills-photography-tab" data-toggle="pill" role="tab" aria-controls="pills-photography" aria-selected="false")
+							
+					.tab-content(id="pills-tabContent")
+						.tab-pane.fade.show.active(id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab")
+							.swiper-container.swiper-container3
+								.swiper-wrapper
+									each val in tabListAll
+										.swiper-slide
+											+cardJustImageHover(val.classname, val.url, "icon-eye", "Labore et dolore magnam", "Photography")
+																		
+						.tab-pane.fade(id="pills-branding" role="tabpanel" aria-labelledby="pills-branding-tab")
+							.swiper-container.swiper-container3
+								.swiper-wrapper
+									each val in tabListBranding
+										.swiper-slide
+											+cardJustImageHover(val.classname, val.url, "icon-eye", "Labore et dolore magnam", "Photography")
+						.tab-pane.fade(id="pills-web" role="tabpanel" aria-labelledby="pills-web-tab")
+							.swiper-container.swiper-container3
+								.swiper-wrapper
+									each val in tabListWeb
+										.swiper-slide
+											+cardJustImageHover(val.classname, val.url, "icon-eye", "Labore et dolore magnam", "Photography")
+						.tab-pane.fade(id="pills-logo-design" role="tabpanel" aria-labelledby="pills-logo-design-tab")
+							.swiper-container.swiper-container3
+								.swiper-wrapper
+									each val in tabListLogo
+										.swiper-slide
+											+cardJustImageHover(val.classname, val.url, "icon-eye", "Labore et dolore magnam", "Photography")
+						.tab-pane.fade(id="pills-photography" role="tabpanel" aria-labelledby="pills-photography-tab")
+							.swiper-container.swiper-container3
+								.swiper-wrapper
+									each val in tabListPhoto
+										.swiper-slide
+											+cardJustImageHover(val.classname, val.url, "icon-eye", "Labore et dolore magnam", "Photography")
+							
+				section.section.section-team#team
+					.container
+						.section-body
+							h3.section-title Meet Our Team
+							include modules/delimiter.pug
+							p.section-description.col-10.mx-auto.mb-5 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+							.swiper-container.swiper-container4
+								.swiper-wrapper
+									.swiper-slide
+										.card.card-team
+											figure.card-image.position-relative
+												img(src="images/team_img/Layer_24.jpg" alt="card-image")
+												.card-overlay.position-absolute
+													.card-text
+														p.card-overlay-title Nemo enim ipsam voluptatem quia voluptas 
+														p.card-overlay-descr sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.
+													+list(sociaTeamlList, "list-group list-social-team list-group-horizontal justify-content-center mx-auto", "social")
+											.card-body
+												h4.card-title John Filmr Doe
+												p.card-description Managing Director
+
+									.swiper-slide
+										.card.card-team
+											figure.card-image.position-relative
+												img(src="images/team_img/Layer_25.jpg" alt="card-image")
+												.card-overlay.position-absolute
+													.card-text
+														p.card-overlay-title Nemo enim ipsam voluptatem quia voluptas 
+														p.card-overlay-descr sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.
+													+list(sociaTeamlList, "list-group list-social-team list-group-horizontal justify-content-center mx-auto", "social")
+											.card-body
+												h4.card-title Chystine Hineu
+												p.card-description Lead Designer		
+
+									.swiper-slide
+										.card.card-team
+											figure.card-image.position-relative
+												img(src="images/team_img/Layer_26.jpg" alt="card-image")
+												.card-overlay.position-absolute
+													.card-text
+														p.card-overlay-title Nemo enim ipsam voluptatem quia voluptas 
+														p.card-overlay-descr sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.
+													+list(sociaTeamlList, "list-group list-social-team list-group-horizontal justify-content-center mx-auto", "social")
+											.card-body
+												h4.card-title Martin Matrone
+												p.card-description Lead Developer	
+									.swiper-slide
+										.card.card-team
+											figure.card-image.position-relative
+												img(src="images/team_img/Layer_27.jpg" alt="card-image")
+												.card-overlay.position-absolute
+													.card-text
+														p.card-overlay-title Nemo enim ipsam voluptatem quia voluptas 
+														p.card-overlay-descr sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.
+													+list(sociaTeamlList, "list-group list-social-team list-group-horizontal justify-content-center mx-auto", "social")
+											.card-body
+												h4.card-title Steve Flaulkin
+												p.card-description Sr UI Designer
+								.swiper-pagination4
+				section.section.section-facts.position-relative
+					.section-background.position-absolute
+						img.bg-image(src="images/Layer_29.jpg" alt="bg-img")
+					.section-overlay
+					.section-foreground
+						.container
+							.section-body.pb-5
+								h3.section-title Some Fun Facts
+								.delimiter.delimiter-light.d-flex.justify-content-center.text-light
+									.line
+									span.icon.icon-heart-outlined.px-3
+									.line
+								.row.justify-content-center
+									each item in cardFactsList
+										.col-12.mb-3.col-sm-6.col-md-3.text-light
+											+card(item.className, "", item.cardImage, item.body, item.cardTitle, item.descr)
+									
+										
+				section.section.section-discuss#contacts
+					.container
+						.section-body
+							h3.section-title Let’s Discuss
+							include modules/delimiter.pug
+							p.section-description.col-10.mx-auto.mb-5 Voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+							.row.mt-4
+								.contacts.order-2.order-lg-1.col-lg-3.mb-4.mb-lg-0
+									p.section-subtitle.text-left.mb-4 Cras at ultrices erat, sed vulputate!	
+									+list(contactList, "list-group list-contact text-left", "primary")
+																						
+								.form-wrapper.order-1.col-12.col-lg-9.col-xl-8
+									h3.form-title.text-left.mb-4 Say hello!	
+									form.form.form-client.col-12.d-flex.flex-wrap.p-0(action="URL")
+										.form-group.col-12.col-lg-6.p-0
+											input(type="text" id="nickname" name="nickname" class="input" placeholder="Name")
+										.form-group.col-12.col-lg-6.p-0.pl-lg-4
+											input(type="email" id="subscribe-email" name="user-email" class="input" placeholder="Email")
+										.form-group.col-12.p-0
+											textarea(id="content" name="content" class="textarea" placeholder="Message")
+										button.btn.text-right.d-flex.align-items-center.justify-content-end.p-0(type="submit")
+											span.text-primary.p-2.icon-mail-envelope-closed
+											span Send message
+								.sosial.p-0.order-3.col-12.col-lg-8.offset-lg-3.col-lg-1.offset-xl-0.col-xl-1
+									+list(social_list, "list-group list-sosial d-flex flex-row flex-xl-column mx-auto", "social")
+					
+				.map.position-relative
+					img(src="images/Map.png", alt="map")
+					.map-icon
+						img(src="images/PIN_1.svg", alt="icon")
+			include modules/footer.pug
+		
+
+		script(src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous")
+		script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")
+		script(src="https://unpkg.com/swiper/js/swiper.min.js")
+		//- script(src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js")
+		script(src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js")
+		script(src="js/main.js")

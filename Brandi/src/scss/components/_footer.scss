@@ -1,0 +1,28 @@
+.footer {
+    padding: 50px 0;
+    background-color: $primary-color;
+    font-size: 13px;
+    &-title {
+        margin-top: 7px;
+        margin-bottom: 30px;
+    }
+}
+
+@media (min-width:960px) {
+    .footer {
+        padding: 100px 0;
+        &-description {
+            line-height: 24px;
+        }
+        & .list-explore {
+            line-height: 32px;
+        }
+    }
+    .footer-description {
+        margin-top: 60px;
+        &-copyrights {
+            border-left: 1px solid #2125298c;
+            padding-left: 10px;
+        }
+    }
+}

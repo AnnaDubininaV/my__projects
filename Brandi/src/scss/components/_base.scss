@@ -1,0 +1,143 @@
+*,
+*::after,
+*::before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+html {
+    font-family: $global-font-family;
+    font-size: $global-font-size;
+    font-weight: $global-font-weight;
+    color: $global-color;
+    background-color: #ffffff;
+}
+
+.container {
+    max-width: 1170px!important;
+    margin: 0 auto;
+    padding: 0 26px!important;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+p,
+figure {
+    margin: 0!important;
+}
+
+.figure {
+    margin-bottom: 0;
+}
+
+*+p,
+*+figure {
+    margin-top: 0;
+}
+
+ul>li>ol,
+ul>li>ul,
+ol>li>ol,
+ol>li>ul {
+    margin: 0;
+}
+
+ol {
+    margin: 0;
+    padding-left: 20px;
+}
+
+ul {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 25px 0;
+    font-weight: 900;
+}
+
+*+h1,
+*+h2,
+*+h3,
+*+h4,
+*+h5,
+*+h6 {
+    margin-top: 25px;
+}
+
+.logo {
+    font-family: 'Pacifico', cursive;
+    color: #ffffff;
+    font-size: 28px;
+    letter-spacing: 1.4px;
+    &:hover {
+        @extend .logo;
+    }
+    &-footer {
+        margin-bottom: 15px;
+    }
+}
+
+.logowrapper {
+    & .line,
+    & .moto {
+        font-size: 13px;
+        font-weight: 300;
+        opacity: 0.3;
+        color: #ffffff!important;
+    }
+}
+
+.delimiter {
+    margin-bottom: 36px;
+    & .line {
+        width: 90px;
+        height: 1px;
+        background-color: $global-color;
+        opacity: 0.1;
+        align-self: center;
+    }
+    & .icon {
+        opacity: 0.2;
+        font-size: 20px;
+    }
+    &-light {
+        @extend .delimiter;
+        & .line {
+            background-color: #ffffff;
+            opacity: 0.5;
+        }
+        & .icon {
+            opacity: 1;
+            color: #ffffff;
+        }
+    }
+}
+
+@media(max-width: 1200px) {
+    .container {
+        padding: 0;
+    }
+}
+
+@media(max-width: 1200px) {
+    .container {
+        padding: 0;
+    }
+}

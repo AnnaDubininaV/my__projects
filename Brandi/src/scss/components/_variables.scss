@@ -1,0 +1,23 @@
+$global-font-size: 16px;
+$global-font-family: 'Open Sans',
+sans-serif;
+$global-font-weight: 400;
+$global-color: #062033;
+$primary-color: #0eb493;
+$primary: $primary-color;
+$secondary: $global-color;
+$link-color: $global-color;
+$link-hover-color: darken($link-color, 30%);
+$link-hover-decoration: none;
+$list-group-bg: transparent;
+$card-bg: transparent;
+$card-border-width: 0;
+$h1-font-size: 62px;
+$h2-font-size: 48px;
+$h3-font-size: 28px;
+$h4-font-size: 20px;
+$h5-font-size: $global-font-size;
+$btn-padding-y: 10px;
+$btn-padding-x: 20px;
+$grid-breakpoints: ( xxs: 0, xs: 320px, sm: 540px, md: 720px, lg: 960px, xl: 1200px);
+$container-max-widths: ( sm: 100%, md: 100%, lg: 100%, xl: 100%);
